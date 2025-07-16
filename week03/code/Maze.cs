@@ -16,54 +16,74 @@
 /// </summary>
 public class Maze
 {
-    private readonly Dictionary<ValueTuple<int, int>, bool[]> _mazeMap;
-    private int _currX = 1;
-    private int _currY = 1;
+  private readonly Dictionary<ValueTuple<int, int>, bool[]> _mazeMap;
+  private int _currX = 1;
+  private int _currY = 1;
 
-    public Maze(Dictionary<ValueTuple<int, int>, bool[]> mazeMap)
-    {
-        _mazeMap = mazeMap;
-    }
+  public Maze(Dictionary<ValueTuple<int, int>, bool[]> mazeMap)
+  {
+    _mazeMap = mazeMap;
+  }
 
-    // TODO Problem 4 - ADD YOUR CODE HERE
-    /// <summary>
-    /// Check to see if you can move left.  If you can, then move.  If you
-    /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
-    /// </summary>
-    public void MoveLeft()
-    {
-        // FILL IN CODE
-    }
+  // TODO Problem 4 - ADD YOUR CODE HERE
+  /// <summary>
+  /// Check to see if you can move left.  If you can, then move.  If you
+  /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
+  /// </summary>
+  public void MoveLeft()
+  {
+    // FILL IN CODE
 
-    /// <summary>
-    /// Check to see if you can move right.  If you can, then move.  If you
-    /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
-    /// </summary>
-    public void MoveRight()
-    {
-        // FILL IN CODE
-    }
+    var key = (_currX, _currY);
+    if (!_mazeMap.ContainsKey(key) || !_mazeMap[key][0])
+      throw new InvalidOperationException("Can't go that way!");
+    _currX--;
+  }
 
-    /// <summary>
-    /// Check to see if you can move up.  If you can, then move.  If you
-    /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
-    /// </summary>
-    public void MoveUp()
-    {
-        // FILL IN CODE
-    }
+  /// <summary>
+  /// Check to see if you can move right.  If you can, then move.  If you
+  /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
+  /// </summary>
+  public void MoveRight()
+  {
+    // FILL IN CODE
 
-    /// <summary>
-    /// Check to see if you can move down.  If you can, then move.  If you
-    /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
-    /// </summary>
-    public void MoveDown()
-    {
-        // FILL IN CODE
-    }
+    var key = (_currX, _currY);
+    if (!_mazeMap.ContainsKey(key) || !_mazeMap[key][1])
+      throw new InvalidOperationException("Can't go that way!");
+    _currX++;
+  }
 
-    public string GetStatus()
-    {
-        return $"Current location (x={_currX}, y={_currY})";
-    }
+  /// <summary>
+  /// Check to see if you can move up.  If you can, then move.  If you
+  /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
+  /// </summary>
+  public void MoveUp()
+  {
+    // FILL IN CODE
+
+    var key = (_currX, _currY);
+    if (!_mazeMap.ContainsKey(key) || !_mazeMap[key][2])
+      throw new InvalidOperationException("Can't go that way!");
+    _currY--;
+  }
+
+  /// <summary>
+  /// Check to see if you can move down.  If you can, then move.  If you
+  /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
+  /// </summary>
+  public void MoveDown()
+  {
+    // FILL IN CODE
+
+    var key = (_currX, _currY);
+    if (!_mazeMap.ContainsKey(key) || !_mazeMap[key][3])
+      throw new InvalidOperationException("Can't go that way!");
+    _currY++;
+  }
+
+  public string GetStatus()
+  {
+    return $"Current location (x={_currX}, y={_currY})";
+  }
 }
