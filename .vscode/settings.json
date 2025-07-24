@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "ms-dotnettools.csharp",
+  "editor.wordWrap": "on",
+  "editor.mouseWheelZoom": false,
+  "editor.formatOnPaste": true,
+  "editor.fontSize": 14
+}
